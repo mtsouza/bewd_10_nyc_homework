@@ -35,8 +35,9 @@ attr_accessor :list
 		end
 		
 		sorted = sorted.reverse
+		# puts sorted
 		sorted.each do |x|
-			puts "#{x['name']} at #{x['address']} with clout of #{x['clout']}."
+			puts "CLOUT: #{x[:clout]} - #{x[:name]} at #{x[:address]}."
 		end
 	end
 

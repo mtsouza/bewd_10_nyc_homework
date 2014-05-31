@@ -4,10 +4,10 @@
 #http://www.yelp.com/developers/documentation/search_api
 
 
-require_relative 'midterm'
+require_relative 'tacoclout'
 
 # running program
-puts "************* Welcome to Taco Clout ************* \n \n"
+puts "\n ************* Welcome to Taco Clout ************* \n \n"
 
 puts "Welcome to Taco Clout - enter your zip and recieve a list of 10 tacos joints and yelp clouts. \n \n"
 
