@@ -21,3 +21,13 @@ API Ideas:
 
 *   omdapi.com
 *   Twitter search api
+
+http://www.yelp.com/developers/documentation/search_api#searchHood
+
+yelp = JSON.load(RestClient.get("http://api.yelp.com/business_review_search?term=taco&location=11215&ywsid=golnfTeAC9rf7RTwDzYzcA"))
+
+yelp = JSON.load(RestClient.get("http://api.yelp.com/business_review_search?category=restaurants&term=taco&location=11215&radius=5&limit=5&ywsid=golnfTeAC9rf7RTwDzYzcA"))
+
+yelp["businesses"].first["avg_rating"]
+yelp["businesses"].first["name"]
+yelp["businesses"].first["address1"]
