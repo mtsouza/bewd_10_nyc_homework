@@ -1,18 +1,9 @@
-
-
 # key golnfTeAC9rf7RTwDzYzcA
-#
-# TACO CLOUT uses Yelp API to find tacos in your zip code. 
-# Taco clout based on number of reviews times average rating
-#http://www.yelp.com/developers/documentation/search_api
-
-# array of taco places - empty array
 
 class TacoClout
 
 require 'rest-client'
 require 'json'
-require 'pry'
 
 attr_accessor :list
 
@@ -36,7 +27,6 @@ attr_accessor :list
 			review_count = biz["review_count"]
 			clout = (rating.to_i)*(review_count.to_i)
 			taco_joint = {name: "#{name}", clout: "#{clout}".to_i, address: "#{address}"} 
-			# puts "New taco joint added! #{taco_joint}."
 			@tacolist << taco_joint	
 		end
 		
@@ -44,20 +34,12 @@ attr_accessor :list
 			hash[:clout]
 		end
 		
-		puts sorted.reverse
+		sorted = sorted.reverse
+		sorted.each do |x|
+			puts "#{x['name']} at #{x['address']} with clout of #{x['clout']}."
+		end
 	end
 
 end
 
-# running program
-puts "************* Welcome to Taco Clout ************* \n \n"
-
-puts "Welcome to Taco Clout - enter your zip and recieve a list of 10 tacos joints and yelp clouts. \n \n"
-
-puts "What is your zip code?"
-	zip_code = gets.to_i
-
-t1 = TacoClout.new 
-t1.get_yelp(zip_code)
-#t1.show_list
 
