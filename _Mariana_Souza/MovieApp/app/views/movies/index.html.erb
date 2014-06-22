@@ -1,0 +1,21 @@
+<h1>Welcome to RetFlix!</h1>
+
+<%= form_tag "/", method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<p><%= link_to "Add a New Movie", new_movie_path %> </p>
+
+<p>See our collection of movies below!</p>
+ 
+<% @movies.each do |t| %>
+	<div>
+	<h3>Title: <%=link_to t.title, t%></h3>
+	<p>Description: <%=t.description%></p>
+	<p>Year Release: <%=t.year_released%></p>
+	<p> <%= link_to "Edit", edit_movie_path(t) %> | <%= link_to "Delete", t, :confirm => "Are you sure?", :method => :delete %> </p>
+	<br  />
+</div>
+
+<% end %>
