@@ -1,0 +1,10 @@
+
+<% @links.each do |link| %>
+<p>
+<%= link_to link.hashcode, link_path(:id => link.hashcode) %> => <%= link.link %>
+</p>
+<% end %>
+
+
+
+<p><%= link_to "Add a New Link", new_link_path %> </p>

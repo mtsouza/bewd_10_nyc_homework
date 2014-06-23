@@ -1,0 +1,27 @@
+<h1>Create a new Ritly</h1>
+
+
+<%= form_for @link do |f| %>
+
+<% if @link.errors.any? %>
+	<h2> Errors: </h2>
+	<ul>
+		<% @link.errors.full_messages.each do |message| %>
+		<li> <%= message %> </li>
+	<% end %>
+	</ul>
+	<% end %>
+
+<p>
+	<%= f.label :link %>
+	<%= f.text_field :link %>
+	<%= f.submit "Let's Ritly That Link!" %>
+</p>
+
+<p>
+	<%= f.hidden_field :hashcode, :value => @link.hashcode %>
+</p>
+
+<% end %>
+
+
