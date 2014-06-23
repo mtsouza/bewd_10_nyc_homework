@@ -10,7 +10,7 @@
 <p>See our collection of movies below!</p>
  
 <% @movies.each do |t| %>
-	<div>
+	<div style="width: 25%; float: left; border: 2px solid black; height: 200px; margin: 10px;",>
 	<h3>Title: <%=link_to t.title, t%></h3>
 	<p>Description: <%=t.description%></p>
 	<p>Year Release: <%=t.year_released%></p>
