@@ -8,4 +8,6 @@ class Movie < ActiveRecord::Base
 	validates :title, :description, :year_released, :presence => true
 	validates :description, :length => { :minimum => 10}
 	validates :title, :uniqueness => true
-	validates :year_released, :numericality => :greater_than => 1900}
+	validates :year_released, :length => { :minimum => 4}
+	
+end

@@ -3,15 +3,18 @@
 
 
 <%= form_for @movie do |f| %>
-  
-<% if @movie.errors.any? %>
-  <h2> Errors: </h2>
-  <ul>
-    <% @movie.errors.full_messages.each do |message| %>
-    <li> <%= message %> </li>
-  <% end %>
-  </ul>
-  <% end %>
+  <% if @movie.errors.any? %>
+  <%= flash.alert = "no savey" %>
+    <h2> Errors: </h2>
+    <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+    </ul>
+<% end %>
+
+
+
 
   <p>
     <%= f.label :title %><br>
