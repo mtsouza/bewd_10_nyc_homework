@@ -11,9 +11,10 @@
  
 <% @movies.each do |t| %>
 	<div style="width: 25%; float: left; border: 2px solid black; height: 200px; margin: 10px;",>
-	<h3>Title: <%=link_to t.title, t%></h3>
-	<p>Description: <%=t.description%></p>
-	<p>Year Release: <%=t.year_released%></p>
+	<h3><%=link_to t.title, t%></h3>
+	<p><%=t.description%></p>
+	<p>(<%=t.year_released%>)</p>
+	<p>Rating: <%=t.ratings%></p>
 	<p> <%= link_to "Edit", edit_movie_path(t) %> | <%= link_to "Delete", t, :confirm => "Are you sure?", :method => :delete %> </p>
 	<br  />
 </div>

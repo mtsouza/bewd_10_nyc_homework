@@ -12,6 +12,17 @@
 	<p style="background-color: yellow;"><%= value %></p>
 <% end %>
 
+ 	<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+<header><h1><%= link_to 'RETFLIX', '/movies' %></h1></header>
+<nav>
+  <%= link_to 'View All', '/movies' %>
+  <%= link_to 'Add New', '/movies/new' %>
+ 
+</nav>
+
+
 <%= yield %>
 
 </body>

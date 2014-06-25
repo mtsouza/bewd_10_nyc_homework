@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+
+header h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+ header h1 {
+ 	text-align: center;
+ 	background-color: red;
+ 	border: 5px solid black;
+ 	font-family: Helvetica, sans-serif;
+ 	font-size: 50px;
+ 	text-shadow:10px 5px black;
+ 	box-shadow: 10px 10px 5px #888888;
+
+ }	

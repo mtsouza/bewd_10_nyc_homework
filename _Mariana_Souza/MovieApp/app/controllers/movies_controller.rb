@@ -41,7 +41,7 @@ before_filter :load_resource, only: [:show, :edit]
   end
 
  def movie_params
-    allow = [:title, :description, :year_released]
+    allow = [:title, :description, :year_released, :ratings]
     params.require(:movie).permit(allow)
   end
 

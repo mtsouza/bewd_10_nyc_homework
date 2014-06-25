@@ -4,7 +4,7 @@
 
 <%= form_for @movie do |f| %>
   <% if @movie.errors.any? %>
-  <%= flash.alert = "no savey" %>
+
     <h2> Errors: </h2>
     <ul>
       <% @movie.errors.full_messages.each do |message| %>
@@ -28,7 +28,13 @@
 
   <p>
   	<%= f.label :year_released %><br>
-  	<%= f.text_field :year_released %>
+  	<%= f.number_field :year_released, min:1886, max: Date.today.year %>
+  <!--   min:1886, max: Date.today.year -->
+  </p>
+
+   <p>
+    <%= f.label :ratings %><br>
+    <%= f.number_field :ratings, min:0, max: 5 %>
   </p>
  
   <p>
