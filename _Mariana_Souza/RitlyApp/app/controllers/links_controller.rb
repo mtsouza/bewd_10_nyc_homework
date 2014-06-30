@@ -1,5 +1,8 @@
 class LinksController < ApplicationController
 
+	before_action :load_movie, only: [:update, :edit, :show]
+	skip_before_action :authenticate_user!, only: :index
+
 	def index
 		@links = Link.all
 	end

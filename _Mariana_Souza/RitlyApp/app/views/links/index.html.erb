@@ -1,4 +1,6 @@
 
+
+
 <% @links.each do |link| %>
 <p>
 <%= link_to link.hashcode, link_path(:id => link.hashcode) %> => <%= link.link %>
@@ -6,5 +8,6 @@
 <% end %>
 
 
-
+<% if user_signed_in? %>
 <p><%= link_to "Add a New Link", new_link_path %> </p>
+<% end %>
